@@ -121,8 +121,8 @@ HOST = {
   'production': 'mechanicalturk.amazonaws.com'
 }[mode]
 
-HOST_requester = "https://" + ("requestersandbox" if in_sandbox else "requester") + ".mturk.com"
-HOST_worker = "https://" + ("workersandbox" if in_sandbox else "www") + ".mturk.com"
+HOST_requester = "http://" + ("requestersandbox" if in_sandbox else "requester") + ".mturk.com"
+HOST_worker = "http://" + ("workersandbox" if in_sandbox else "www") + ".mturk.com"
 
 argv = sys.argv[1:]
 
@@ -221,8 +221,8 @@ def create_hit(settings):
     dict_str(settings_raw)
     )
 
-  if "http:" in settings["url"]:
-    sys.exit("Error: inside settings.json, your url is set to use 'http:'. It needs to use 'https:'")
+  ##if "http:" in settings["url"]:
+   ## sys.exit("Error: inside settings.json, your url is set to use 'http:'. It needs to use 'https:'")
     ## todo: some static analysis
 
   if dialogue_mode=="verbose":
