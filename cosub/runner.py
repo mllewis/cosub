@@ -301,7 +301,7 @@ def create_hit(settings):
     title           = settings["title"],
     description     = settings["description"],
     keywords        = settings["keywords"],
-    question        = question.ExternalQuestion(settings["url"], settings["frame_height"]),
+    question        = question.HTMLQuestion(settings["url"], settings["frame_height"]),
     max_assignments = max_assignments,
     reward          = settings["reward"],
     approval_delay  = timedelta(seconds = settings["auto_approval_delay"]),
